@@ -1,0 +1,20 @@
+---
+title: "Euro 2020 Soccer Player Birth Months"
+description: |
+  We will show which month soccer players in Europe were born the most in. 
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(knitr)
+library(rmarkdown)
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+# Learn more about publishing to GitHub Pages at:
+# https://rstudio.github.io/distill/publish_website.html#github-pages
+
+```
+
