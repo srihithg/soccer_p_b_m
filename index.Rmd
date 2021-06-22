@@ -17,4 +17,18 @@ library(rmarkdown)
 # https://rstudio.github.io/distill/publish_website.html#github-pages
 
 ```
+```{r}
+x <- read_csv("birthdates.csv")
+birth_month <- x %>% 
+  arrange(x) %>%
+  mutate(birth_month = substring(value, 7, 8)) %>%
+  group_by(birth_month) %>%
+  summarize(total = n()) %>%
+  mutate(month = c("Jan", "Feb", "Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")) %>%
+  ggplot(mapping = aes(x = month, y = total, fill = month)) +
+  geom_col() + 
+  coord_flip() + 
+  scale_y_discrete(labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
+birth_month
+```
 
